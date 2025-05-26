@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Listing</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>🛍️ Product Listing</h1>
+      <nav>
+        <a href="index.html"><i class="fa fa-user"></i> Portfolio</a>
+        <a href="todo.html"><i class="fa fa-list-check"></i> To-Do App</a>
+        <a href="products.html" class="active"><i class="fa fa-boxes-stacked"></i> Products</a>
+        <a href="contact.html"><i class="fa fa-envelope"></i> Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+        <label for="filter"><i class="fa fa-filter"></i> Category:</label>
+        <select id="filter" onchange="filterProducts()">
+          <option value="all">All</option>
+          <option value="electronics">Electronics</option>
+          <option value="books">Books</option>
+          <option value="fashion">Fashion</option>
+        </select>
+        <input type="text" id="searchInput" placeholder="🔍 Search products..." oninput="filterProducts()" style="flex:2;max-width:250px;">
+        <button onclick="sortProducts('asc')"><i class="fa fa-arrow-up"></i> Price Low-High</button>
+        <button onclick="sortProducts('desc')"><i class="fa fa-arrow-down"></i> Price High-Low</button>
+      </div>
+      <div id="productList" class="product-grid"></div>
+      <div id="productModal" class="modal" style="display:none;">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <div id="modalBody"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Vishnu Vardhan Reddy Kosanam | Designed with <span style="color:#f69d3c;">❤️</span></p>
+  </footer>
+  <script src="products.js"></script>
+</body>
+</html>

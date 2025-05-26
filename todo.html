@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List App</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>📝 To-Do List</h1>
+      <nav>
+        <a href="index.html"><i class="fa fa-user"></i> Portfolio</a>
+        <a href="todo.html" class="active"><i class="fa fa-list-check"></i> To-Do App</a>
+        <a href="products.html"><i class="fa fa-boxes-stacked"></i> Products</a>
+        <a href="contact.html"><i class="fa fa-envelope"></i> Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section>
+      <label for="taskInput"><i class="fa fa-plus"></i> Add a new task:</label>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+        <input type="text" id="taskInput" placeholder="Enter a new task..." style="flex:2;" onkeydown="if(event.key==='Enter'){addTask();}">
+        <input type="date" id="startDate" style="flex:1;" title="Start Date">
+        <input type="date" id="endDate" style="flex:1;" title="Completion Date">
+        <select id="priority" style="flex:1;">
+          <option value="normal">Normal</option>
+          <option value="high">High</option>
+          <option value="low">Low</option>
+        </select>
+        <button onclick="addTask()" style="flex:1;"><i class="fa fa-plus"></i> Add Task</button>
+      </div>
+      <div style="margin:10px 0;">
+        <label for="filterStatus"><i class="fa fa-filter"></i> Filter:</label>
+        <select id="filterStatus" onchange="filterTasks()">
+          <option value="all">All</option>
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+        <button onclick="clearAllTasks()" style="margin-left:10px;background:#e53935;"><i class="fa fa-trash"></i> Clear All</button>
+      </div>
+      <div id="progressBarContainer" style="margin:16px 0;">
+        <div id="progressBar" style="height:18px;border-radius:8px;background:linear-gradient(90deg,#43a047,#f69d3c);width:0%;transition:width 0.6s;"></div>
+        <span id="progressText" style="font-size:0.95em;color:#1976d2;"></span>
+      </div>
+      <ul id="taskList"></ul>
+      <small style="color:#888;">Click <i class="fa fa-check"></i> to mark as done. <i class="fa fa-trash"></i> to delete. <i class="fa fa-edit"></i> to edit.</small>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Vishnu Vardhan Reddy Kosanam | Designed with <span style="color:#f69d3c;">❤️</span></p>
+  </footer>
+  <script src="js/todo.js"></script>
+</body>
+</html>

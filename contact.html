@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Vishnu Vardhan Reddy Kosanam</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1><i class="fa fa-envelope"></i> Contact Me</h1>
+      <nav>
+        <a href="index.html"><i class="fa fa-user"></i> Portfolio</a>
+        <a href="todo.html"><i class="fa fa-list-check"></i> To-Do App</a>
+        <a href="products.html"><i class="fa fa-boxes-stacked"></i> Products</a>
+        <a href="contact.html" class="active"><i class="fa fa-envelope"></i> Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section>
+      <h2>Get in Touch</h2>
+      <form id="contactForm" style="max-width:400px;margin:auto;display:flex;flex-direction:column;gap:14px;">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit"><i class="fa fa-paper-plane"></i> Send Message</button>
+      </form>
+      <div id="contactSuccess" style="display:none;text-align:center;color:#43a047;font-weight:600;margin-top:1rem;font-size:1.1em;">
+        <i class="fa fa-check-circle"></i> Thank you! Your message was sent.
+      </div>
+      <div style="margin-top:2rem;">
+        <p><i class="fa fa-envelope"></i> <a href="mailto:vishnuvardhankosanam@gmail.com">vishnuvardhankosanam@gmail.com</a></p>
+        <p><i class="fa fa-phone"></i> +91 89xxxxxx23</p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/vishnuvardhankosanam" target="_blank">linkedin.com/in/vishnuvardhankosanam</a></p>
+        <p><i class="fab fa-github"></i> <a href="https://github.com/vishnukosanam" target="_blank">github.com/vishnukosanam</a></p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Vishnu Vardhan Reddy Kosanam | Designed with <span style="color:#f69d3c;">❤️</span></p>
+  </footer>
+  <script>
+    document.getElementById('contactForm').onsubmit = function(e) {
+      e.preventDefault();
+      this.style.opacity = 0.5;
+      setTimeout(() => {
+        this.style.display = "none";
+        document.getElementById('contactSuccess').style.display = "block";
+      }, 700);
+    };
+  </script>
+</body>
+</html>
